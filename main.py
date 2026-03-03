@@ -99,34 +99,39 @@ def on_mouse(event, x, y, flags, param):
 cv2.namedWindow('Segmentasyon Aracı')
 cv2.setMouseCallback('Segmentasyon Aracı', on_mouse)
 
-print("""
---- KOMUTLAR ---
-'k' : K-means
-'w' : Watershed
-'g' : GrabCut (Fareyle nesneyi kutu içine al!)
-'r' : Resmi sıfırla
-'q' : Çıkış
-""")
+def main():
+    global img_display, mode
 
-while True:
-    cv2.imshow('Segmentasyon Aracı', img_display)
+    print("""
+    --- KOMUTLAR ---
+    'k' : K-means
+    'w' : Watershed
+    'g' : GrabCut (Fareyle nesneyi kutu içine al!)
+    'r' : Resmi sıfırla
+    'q' : Çıkış
+    """)
 
-    key = cv2.waitKey(1) & 0xFF
+    while True:
+        cv2.imshow('Segmentasyon Aracı', img_display)
 
-    if key == ord('k'):
-        print("K-means uygulanıyor...")
-        img_display = apply_kmeans(img_orig)
-    elif key == ord('w'):
-        print("Watershed uygulanıyor...")
-        img_display = apply_watershed(img_orig.copy())
-    elif key == ord('g'):
-        print("GrabCut Seçimi - Fareyle bir dikdörtgen çiz!")
-        mode = 'grabcut_selection'
-    elif key == ord('r'):
-        img_display = img_orig.copy()
-        mode = 'normal'
-        print("Resim sıfırlandı.")
-    elif key == ord('q'):
-        break
+        key = cv2.waitKey(1) & 0xFF
 
-cv2.destroyAllWindows()
+        if key == ord('k'):
+            print("K-means uygulanıyor...")
+            img_display = apply_kmeans(img_orig)
+        elif key == ord('w'):
+            print("Watershed uygulanıyor...")
+            img_display = apply_watershed(img_orig.copy())
+        elif key == ord('g'):
+            print("GrabCut Seçimi - Fareyle bir dikdörtgen çiz!")
+            mode = 'grabcut_selection'
+        elif key == ord('r'):
+            img_display = img_orig.copy()
+            mode = 'normal'
+            print("Resim sıfırlandı.")
+        elif key == ord('q'):
+            break
+    cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    main()
