@@ -6,11 +6,11 @@ Bu proje; kullanıcı etkileşimli bir görüntü segmentasyonu uygulamasıdır.
 
 Uygulama, resimdeki nesneleri arka plandan ayırmak için üç farklı yaklaşım sunar:
 
-1.K-means Kümeleme: Pikselleri renk benzerliklerine göre gruplandırır. Karmaşık renk geçişlerini basitleştirmek için idealdir.
+1. K-means Kümeleme: Pikselleri renk benzerliklerine göre gruplandırır. Karmaşık renk geçişlerini basitleştirmek için idealdir.
 
-2.Watershed Algoritması: Görüntüyü topografik bir harita gibi işleyerek nesne sınırlarını belirler. Özellikle birbirine değen nesneleri ayırmada etkilidir. Sınırları belirginleştirmek için kalınlaştırılmış kırmızı çizgiler kullanır.
+2. Watershed Algoritması: Görüntüyü topografik bir harita gibi işleyerek nesne sınırlarını belirler. Özellikle birbirine değen nesneleri ayırmada etkilidir. Sınırları belirginleştirmek için kalınlaştırılmış kırmızı çizgiler kullanır.
 
-3.GrabCut: Kullanıcı tarafından fare ile seçilen bir dikdörtgen alanı temel alarak nesneyi arka plandan akıllıca ayırır.
+3. GrabCut: Kullanıcı tarafından fare ile seçilen bir dikdörtgen alanı temel alarak nesneyi arka plandan akıllıca ayırır.
 
 # Kullanılan Kütüphaneler ve Kurulum
 
